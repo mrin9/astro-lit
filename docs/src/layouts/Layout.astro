@@ -12,7 +12,7 @@ const { title } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <title>{title}</title>
-    <script type="module" src="/bundle.js"></script>
+    <!-- We don't need to load bundle.js anymore since Lit components are handled by Astro -->
   </head>
   <body>
     <slot />
