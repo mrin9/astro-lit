@@ -1,0 +1,127 @@
+<!DOCTYPE html><html lang="en" data-astro-cid-sckkx6r4> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><meta name="description" content="A collection of reusable web components built with Lit"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><title>Web Components Library</title><style>:root{--primary-color: #4f46e5;--text-color: #1f2937;--background-color: #ffffff}body{font-family:system-ui,sans-serif;color:var(--text-color);background:var(--background-color);margin:0;padding:0;line-height:1.5}main[data-astro-cid-sckkx6r4]{max-width:80ch;margin:0 auto;padding:2rem}
+.hero[data-astro-cid-j7pv25f6]{text-align:center;padding:4rem 0}.subtitle[data-astro-cid-j7pv25f6]{color:#666;font-size:1.2rem}.quick-start[data-astro-cid-j7pv25f6]{margin:2rem 0}.examples[data-astro-cid-j7pv25f6]{margin:3rem 0}.example-card[data-astro-cid-j7pv25f6]{margin:2rem 0;padding:1.5rem;border:1px solid #eee;border-radius:.5rem}.example-demo[data-astro-cid-j7pv25f6]{margin:1rem 0;padding:1rem;background:#f9fafb;border-radius:.5rem}pre[data-astro-cid-j7pv25f6]{background:#f4f4f4;padding:1rem;border-radius:.5rem;overflow-x:auto}code[data-astro-cid-j7pv25f6]{font-size:.9em}
+</style><script>/** @license Copyright 2020 Google LLC (BSD-3-Clause) */
+/** Bundled JS generated from "@astrojs/lit/client-shim.js" */
+var N = Object.defineProperty;
+var i = (t, n) => () => (t && (n = t((t = 0))), n);
+var b = (t, n) => {
+	for (var a in n) N(t, a, { get: n[a], enumerable: !0 });
+};
+function s() {
+	if (d === void 0) {
+		let t = document.createElement('div');
+		(t.innerHTML = '<div><template shadowrootmode="open"></template></div>'),
+			(d = !!t.firstElementChild.shadowRoot);
+	}
+	return d;
+}
+var d,
+	m = i(() => {});
+var p,
+	c,
+	f,
+	u = i(() => {
+		(p = (t) => t.parentElement === null),
+			(c = (t) => t.tagName === 'TEMPLATE'),
+			(f = (t) => t.nodeType === Node.ELEMENT_NODE);
+	});
+var h,
+	E = i(() => {
+		m();
+		u();
+		h = (t) => {
+			var n;
+			if (s()) return;
+			let a = [],
+				e = t.firstElementChild;
+			for (; e !== t && e !== null; )
+				if (c(e)) a.push(e), (e = e.content);
+				else if (e.firstElementChild !== null) e = e.firstElementChild;
+				else if (f(e) && e.nextElementSibling !== null) e = e.nextElementSibling;
+				else {
+					let o;
+					for (; e !== t && e !== null; )
+						if (p(e)) {
+							o = a.pop();
+							let r = o.parentElement,
+								l = o.getAttribute('shadowroot');
+							if (((e = o), l === 'open' || l === 'closed')) {
+								let y = o.hasAttribute('shadowrootdelegatesfocus');
+								try {
+									r.attachShadow({ mode: l, delegatesFocus: y }).append(o.content);
+								} catch {}
+							} else o = void 0;
+						} else {
+							let r = e.nextElementSibling;
+							if (r != null) {
+								(e = r), o !== void 0 && o.parentElement.removeChild(o);
+								break;
+							}
+							let l =
+								(n = e.parentElement) === null || n === void 0 ? void 0 : n.nextElementSibling;
+							if (l != null) {
+								(e = l), o !== void 0 && o.parentElement.removeChild(o);
+								break;
+							}
+							(e = e.parentElement), o !== void 0 && (o.parentElement.removeChild(o), (o = void 0));
+						}
+				}
+		};
+	});
+var w = i(() => {
+	E();
+});
+var v = {};
+b(v, { hasNativeDeclarativeShadowRoots: () => s, hydrateShadowRoots: () => h });
+var S = i(() => {
+	m();
+	w();
+});
+async function g() {
+	let { hydrateShadowRoots: t } = await Promise.resolve().then(() => (S(), v));
+	window.addEventListener('DOMContentLoaded', () => t(document.body), { once: true });
+}
+var x = Document.parseHTMLUnsafe(
+	'<p><template shadowrootmode="open"></template></p>'
+).querySelector('p');
+(!x || !x.shadowRoot) && g();
+</script></head> <body data-astro-cid-sckkx6r4> <nav data-astro-cid-sckkx6r4> <a href="/" data-astro-cid-sckkx6r4>Home</a> <a href="/components" data-astro-cid-sckkx6r4>Components</a> <a href="/api" data-astro-cid-sckkx6r4>API</a> </nav> <main data-astro-cid-sckkx6r4>  <section class="hero" data-astro-cid-j7pv25f6> <h1 data-astro-cid-j7pv25f6>Web Components Library</h1> <p class="subtitle" data-astro-cid-j7pv25f6>Modern, lightweight, and framework-agnostic components</p> </section> <section class="quick-start" data-astro-cid-j7pv25f6> <h2 data-astro-cid-j7pv25f6>Quick Start</h2> <pre data-astro-cid-j7pv25f6><code data-astro-cid-j7pv25f6>// Install the package
+npm install @your-org/web-components
+
+// Import the component
+import &#39;@your-org/web-components/my-component&#39;;
+
+// Use in HTML
+&lt;my-component&gt;
+  Your content here
+&lt;/my-component&gt;</code></pre> </section> <section class="examples" data-astro-cid-j7pv25f6> <h2 data-astro-cid-j7pv25f6>Basic Examples</h2> <div class="example-card" data-astro-cid-j7pv25f6> <h3 data-astro-cid-j7pv25f6>Default Usage</h3> <div class="example-demo" data-astro-cid-j7pv25f6> <my-component data-astro-cid-j7pv25f6="true"><template shadowroot="open" shadowrootmode="open"><style>
+    :host {
+      display: block;
+      padding: 1rem;
+      border: 1px solid var(--primary-color, #4f46e5);
+      border-radius: 0.5rem;
+    }
+  </style><!--lit-part FtD1jWLarJM=-->
+      <div class="container">
+        <slot></slot>
+      </div>
+    <!--/lit-part--></template>
+This is a basic example
+</my-component> </div> <pre data-astro-cid-j7pv25f6><code data-astro-cid-j7pv25f6>&lt;my-component&gt;
+  This is a basic example
+&lt;/my-component&gt;</code></pre> </div> <div class="example-card" data-astro-cid-j7pv25f6> <h3 data-astro-cid-j7pv25f6>With Custom Styling</h3> <div class="example-demo" data-astro-cid-j7pv25f6> <my-component style="--primary-color: #e44d26;" data-astro-cid-j7pv25f6="true"><template shadowroot="open" shadowrootmode="open"><style>
+    :host {
+      display: block;
+      padding: 1rem;
+      border: 1px solid var(--primary-color, #4f46e5);
+      border-radius: 0.5rem;
+    }
+  </style><!--lit-part FtD1jWLarJM=-->
+      <div class="container">
+        <slot></slot>
+      </div>
+    <!--/lit-part--></template>
+Customized component
+</my-component> </div> <pre data-astro-cid-j7pv25f6><code data-astro-cid-j7pv25f6>&lt;my-component style="--primary-color: #e44d26;"&gt;
+  Customized component
+&lt;/my-component&gt;</code></pre> </div> </section>  </main> </body></html> 

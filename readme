@@ -1,0 +1,42 @@
+Build Process:
+
+bashCopy# In root directory
+npm run build   # This creates dist/bundle.js
+
+# Copy bundle to docs/public
+cp dist/bundle.js docs/public/
+The key differences and improvements from the previous version:
+
+Removed TypeScript dependencies and configurations
+Simplified Rollup config by removing TypeScript plugin
+Changed the file extensions from .ts to .js
+Updated the Web Component to use vanilla JavaScript class properties
+Instead of using file:.. dependency, we're manually copying the bundle to the docs' public folder
+
+For development workflow:
+bashCopy# Terminal 1 - Watch for changes in web components
+npm run watch
+
+# Terminal 2 - Copy bundle to docs whenever it changes
+# On macOS/Linux:
+while true; do cp dist/bundle.js docs/public/; sleep 2; done
+# On Windows (PowerShell):
+while ($true) { cp dist/bundle.js docs/public/; Start-Sleep -Seconds 2 }
+
+# Terminal 3 - Run Astro dev server
+cd docs
+npm run dev
+This setup ensures that:
+
+The web component source code is bundled into dist/bundle.js
+The bundle is copied to the docs' public folder
+Astro serves the documentation site and can access the bundle
+
+The reason we're copying the bundle to docs/public instead of using file:.. dependency is because:
+
+We want to test the actual bundled output that will be published
+The file:.. approach would try to import the package as a module, which isn't what we want - we need the bundled file to be served as a static asset
+This better reflects how the documentation site will work in production, where it will load the bundle from a CDN or local file
+
+When you eventually publish this as an npm package, users will install it and get the bundled file from dist/bundle.js, while the documentation site will serve the bundle as a static asset.
+Would you like me to explain any part of this setup in more detail or help with any adjustments? CopyRetryClaude does not have the ability to run the code it generates yet.

@@ -1,0 +1,88 @@
+<!DOCTYPE html><html lang="en" data-astro-cid-sckkx6r4> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><meta name="description" content="API documentation for web components"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><title>API Reference</title><style>:root{--primary-color: #4f46e5;--text-color: #1f2937;--background-color: #ffffff}body{font-family:system-ui,sans-serif;color:var(--text-color);background:var(--background-color);margin:0;padding:0;line-height:1.5}main[data-astro-cid-sckkx6r4]{max-width:80ch;margin:0 auto;padding:2rem}
+.api-nav[data-astro-cid-gtzdsgas]{position:sticky;top:0;background:#fff;padding:1rem 0;margin:2rem 0;border-bottom:1px solid #eee;display:flex;gap:1rem}.api-nav[data-astro-cid-gtzdsgas] a[data-astro-cid-gtzdsgas]{color:#666;text-decoration:none;padding:.5rem 1rem;border-radius:.25rem}.api-nav[data-astro-cid-gtzdsgas] a[data-astro-cid-gtzdsgas]:hover{background:#f4f4f4}section[data-astro-cid-gtzdsgas]{margin:3rem 0}.table-container[data-astro-cid-gtzdsgas]{overflow-x:auto}table[data-astro-cid-gtzdsgas]{width:100%;border-collapse:collapse;margin:1rem 0}th[data-astro-cid-gtzdsgas],td[data-astro-cid-gtzdsgas]{text-align:left;padding:.75rem;border-bottom:1px solid #eee}th[data-astro-cid-gtzdsgas]{background:#f9fafb;font-weight:600}code[data-astro-cid-gtzdsgas]{background:#f4f4f4;padding:.2rem .4rem;border-radius:.25rem;font-size:.9em}
+</style><script>/** @license Copyright 2020 Google LLC (BSD-3-Clause) */
+/** Bundled JS generated from "@astrojs/lit/client-shim.js" */
+var N = Object.defineProperty;
+var i = (t, n) => () => (t && (n = t((t = 0))), n);
+var b = (t, n) => {
+	for (var a in n) N(t, a, { get: n[a], enumerable: !0 });
+};
+function s() {
+	if (d === void 0) {
+		let t = document.createElement('div');
+		(t.innerHTML = '<div><template shadowrootmode="open"></template></div>'),
+			(d = !!t.firstElementChild.shadowRoot);
+	}
+	return d;
+}
+var d,
+	m = i(() => {});
+var p,
+	c,
+	f,
+	u = i(() => {
+		(p = (t) => t.parentElement === null),
+			(c = (t) => t.tagName === 'TEMPLATE'),
+			(f = (t) => t.nodeType === Node.ELEMENT_NODE);
+	});
+var h,
+	E = i(() => {
+		m();
+		u();
+		h = (t) => {
+			var n;
+			if (s()) return;
+			let a = [],
+				e = t.firstElementChild;
+			for (; e !== t && e !== null; )
+				if (c(e)) a.push(e), (e = e.content);
+				else if (e.firstElementChild !== null) e = e.firstElementChild;
+				else if (f(e) && e.nextElementSibling !== null) e = e.nextElementSibling;
+				else {
+					let o;
+					for (; e !== t && e !== null; )
+						if (p(e)) {
+							o = a.pop();
+							let r = o.parentElement,
+								l = o.getAttribute('shadowroot');
+							if (((e = o), l === 'open' || l === 'closed')) {
+								let y = o.hasAttribute('shadowrootdelegatesfocus');
+								try {
+									r.attachShadow({ mode: l, delegatesFocus: y }).append(o.content);
+								} catch {}
+							} else o = void 0;
+						} else {
+							let r = e.nextElementSibling;
+							if (r != null) {
+								(e = r), o !== void 0 && o.parentElement.removeChild(o);
+								break;
+							}
+							let l =
+								(n = e.parentElement) === null || n === void 0 ? void 0 : n.nextElementSibling;
+							if (l != null) {
+								(e = l), o !== void 0 && o.parentElement.removeChild(o);
+								break;
+							}
+							(e = e.parentElement), o !== void 0 && (o.parentElement.removeChild(o), (o = void 0));
+						}
+				}
+		};
+	});
+var w = i(() => {
+	E();
+});
+var v = {};
+b(v, { hasNativeDeclarativeShadowRoots: () => s, hydrateShadowRoots: () => h });
+var S = i(() => {
+	m();
+	w();
+});
+async function g() {
+	let { hydrateShadowRoots: t } = await Promise.resolve().then(() => (S(), v));
+	window.addEventListener('DOMContentLoaded', () => t(document.body), { once: true });
+}
+var x = Document.parseHTMLUnsafe(
+	'<p><template shadowrootmode="open"></template></p>'
+).querySelector('p');
+(!x || !x.shadowRoot) && g();
+</script></head> <body data-astro-cid-sckkx6r4> <nav data-astro-cid-sckkx6r4> <a href="/" data-astro-cid-sckkx6r4>Home</a> <a href="/components" data-astro-cid-sckkx6r4>Components</a> <a href="/api" data-astro-cid-sckkx6r4>API</a> </nav> <main data-astro-cid-sckkx6r4>  <h1 data-astro-cid-gtzdsgas>API Reference</h1> <nav class="api-nav" data-astro-cid-gtzdsgas> <a href="#properties" data-astro-cid-gtzdsgas>Properties</a> <a href="#events" data-astro-cid-gtzdsgas>Events</a> <a href="#css" data-astro-cid-gtzdsgas>CSS Custom Properties</a> <a href="#slots" data-astro-cid-gtzdsgas>Slots</a> </nav> <section id="properties" data-astro-cid-gtzdsgas> <h2 data-astro-cid-gtzdsgas>Properties</h2> <div class="table-container" data-astro-cid-gtzdsgas> <table data-astro-cid-gtzdsgas> <thead data-astro-cid-gtzdsgas> <tr data-astro-cid-gtzdsgas> <th data-astro-cid-gtzdsgas>Name</th> <th data-astro-cid-gtzdsgas>Type</th> <th data-astro-cid-gtzdsgas>Default</th> <th data-astro-cid-gtzdsgas>Description</th> </tr> </thead> <tbody data-astro-cid-gtzdsgas> <tr data-astro-cid-gtzdsgas> <td data-astro-cid-gtzdsgas><code data-astro-cid-gtzdsgas>variant</code></td> <td data-astro-cid-gtzdsgas><code data-astro-cid-gtzdsgas>string</code></td> <td data-astro-cid-gtzdsgas><code data-astro-cid-gtzdsgas>&#39;default&#39;</code></td> <td data-astro-cid-gtzdsgas>Visual style variant of the component (default, primary, secondary)</td> </tr><tr data-astro-cid-gtzdsgas> <td data-astro-cid-gtzdsgas><code data-astro-cid-gtzdsgas>disabled</code></td> <td data-astro-cid-gtzdsgas><code data-astro-cid-gtzdsgas>boolean</code></td> <td data-astro-cid-gtzdsgas><code data-astro-cid-gtzdsgas>false</code></td> <td data-astro-cid-gtzdsgas>Whether the component is disabled</td> </tr> </tbody> </table> </div> </section> <section id="events" data-astro-cid-gtzdsgas> <h2 data-astro-cid-gtzdsgas>Events</h2> <div class="table-container" data-astro-cid-gtzdsgas> <table data-astro-cid-gtzdsgas> <thead data-astro-cid-gtzdsgas> <tr data-astro-cid-gtzdsgas> <th data-astro-cid-gtzdsgas>Name</th> <th data-astro-cid-gtzdsgas>Detail Type</th> <th data-astro-cid-gtzdsgas>Description</th> </tr> </thead> <tbody data-astro-cid-gtzdsgas> <tr data-astro-cid-gtzdsgas> <td data-astro-cid-gtzdsgas><code data-astro-cid-gtzdsgas>my-event</code></td> <td data-astro-cid-gtzdsgas><code data-astro-cid-gtzdsgas>{ value: string }</code></td> <td data-astro-cid-gtzdsgas>Fired when the component value changes</td> </tr> </tbody> </table> </div> </section> <section id="css" data-astro-cid-gtzdsgas> <h2 data-astro-cid-gtzdsgas>CSS Custom Properties</h2> <div class="table-container" data-astro-cid-gtzdsgas> <table data-astro-cid-gtzdsgas> <thead data-astro-cid-gtzdsgas> <tr data-astro-cid-gtzdsgas> <th data-astro-cid-gtzdsgas>Name</th> <th data-astro-cid-gtzdsgas>Default</th> <th data-astro-cid-gtzdsgas>Description</th> </tr> </thead> <tbody data-astro-cid-gtzdsgas> <tr data-astro-cid-gtzdsgas> <td data-astro-cid-gtzdsgas><code data-astro-cid-gtzdsgas>--primary-color</code></td> <td data-astro-cid-gtzdsgas><code data-astro-cid-gtzdsgas>#4f46e5</code></td> <td data-astro-cid-gtzdsgas>Primary color used for borders and accents</td> </tr><tr data-astro-cid-gtzdsgas> <td data-astro-cid-gtzdsgas><code data-astro-cid-gtzdsgas>--background-color</code></td> <td data-astro-cid-gtzdsgas><code data-astro-cid-gtzdsgas>#ffffff</code></td> <td data-astro-cid-gtzdsgas>Background color of the component</td> </tr> </tbody> </table> </div> </section> <section id="slots" data-astro-cid-gtzdsgas> <h2 data-astro-cid-gtzdsgas>Slots</h2> <div class="table-container" data-astro-cid-gtzdsgas> <table data-astro-cid-gtzdsgas> <thead data-astro-cid-gtzdsgas> <tr data-astro-cid-gtzdsgas> <th data-astro-cid-gtzdsgas>Name</th> <th data-astro-cid-gtzdsgas>Description</th> </tr> </thead> <tbody data-astro-cid-gtzdsgas> <tr data-astro-cid-gtzdsgas> <td data-astro-cid-gtzdsgas><code data-astro-cid-gtzdsgas>default</code></td> <td data-astro-cid-gtzdsgas>Default slot for component content</td> </tr><tr data-astro-cid-gtzdsgas> <td data-astro-cid-gtzdsgas><code data-astro-cid-gtzdsgas>icon</code></td> <td data-astro-cid-gtzdsgas>Optional slot for adding an icon</td> </tr> </tbody> </table> </div> </section>  </main> </body></html> 
